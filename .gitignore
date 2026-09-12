@@ -1,0 +1,16 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
