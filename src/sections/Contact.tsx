@@ -6,7 +6,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 // Replace these with your real contact details.
 const EMAIL = " laurencelleakpa18@gmail.com";
 const GITHUB_URL = "https://github.com/laurencelle14";
-const LINKEDIN_URL = "https://www.linkedin.com/in/Laurencelle Akpa ";
+const LINKEDIN_URL = "https://www.linkedin.com/in/laurencelle-akpa-522484432";
 
 export function Contact() {
   const { t } = useLanguage();
