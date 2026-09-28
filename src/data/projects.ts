@@ -97,7 +97,7 @@ export const projects: Project[] = [
       overview:
         "Anitche est une plateforme e-commerce multi-portails desservant clients, vendeurs et livreurs via un seul système, développée en collaboration au sein d'une équipe de neuf développeurs.",
       problem:
-        "Un même système e-commerce devait servir des types d'utilisateurs très différents — acheteurs, vendeurs et livreurs — chacun avec ses propres permissions et flux, tout en restant maintenable en tant que base de code d'équipe.",
+        "Un même système e-commerce devait servir des types d'utilisateurs très différents (acheteurs, vendeurs et livreurs), chacun avec ses propres permissions et flux, tout en restant maintenable en tant que base de code d'équipe.",
       solution:
         "Un monorepo Django avec 12 apps dédiées, des settings séparés pour dev/prod, et une couche API REST partagée sécurisée par JWT. Les tâches de fond (notifications, traitement des commandes) passent par Celery et Redis. Le backend est actuellement en refactorisation, avec une partie en Django et une partie en FastAPI, validée par une CI sur chaque branche.",
       features: [
@@ -125,7 +125,7 @@ export const projects: Project[] = [
       overview:
         "Anitche is a multi-portal e-commerce platform serving clients, vendors and couriers through one system, developed collaboratively within a nine-developer team.",
       problem:
-        "A single e-commerce system needed to serve very different user types — buyers, sellers and delivery couriers — each with their own permissions and workflows, while staying maintainable as a team codebase.",
+        "A single e-commerce system needed to serve very different user types (buyers, sellers and delivery couriers), each with their own permissions and workflows, while staying maintainable as a team codebase.",
       solution:
         "A Django monorepo with 12 dedicated apps, split settings for dev/prod, and a shared REST API layer secured with JWT. Background tasks (notifications, order processing) run through Celery and Redis. The backend is currently being refactored, split between Django and FastAPI, with CI running on every branch.",
       features: [
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     stack: ["Django", "Django REST Framework", "React", "PostgreSQL"],
     statusKey: "docs",
     fr: {
-      tagline: "Boutique en ligne de perruques, mèches et soins — en conception.",
+      tagline: "Boutique en ligne de perruques, mèches et soins, en cours de conception.",
       description:
         "Projet de digitalisation d'une activité familiale de vente de perruques, mèches de luxe, extensions et soins capillaires/corporels : catalogue, panier, compte client et paiement en ligne.",
       role: "Développeur full-stack",
@@ -179,14 +179,14 @@ export const projects: Project[] = [
       ],
     },
     en: {
-      tagline: "Online store for wigs, hair extensions and care products — in design.",
+      tagline: "Online store for wigs, hair extensions and care products, currently in design.",
       description:
         "A project to digitize an existing family business selling wigs, luxury hair extensions and hair/body care products: catalog, cart, customer accounts and online payment.",
       role: "Full-stack developer",
       overview:
         "Melo Caprice Boutik will be the e-commerce platform for an already-existing business, giving it an online presence beyond local sales and social media. The project is currently in the scoping and design phase.",
       problem:
-        "The business lacks structured sales and has limited international reach — without a platform, visibility and the ability to sell beyond the local circle stay limited.",
+        "The business lacks structured sales and has limited international reach. Without a platform, visibility and the ability to sell beyond the local circle stay limited.",
       solution:
         "A full online store is planned: free catalog browsing, a cart usable without an account, mandatory account creation to check out, product search and filters, a favorites list, online payment, and an admin area so the client can manage products herself.",
       features: [

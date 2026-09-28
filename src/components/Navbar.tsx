@@ -39,7 +39,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
         <a href="#home" className="focus-ring font-mono text-sm font-medium tracking-tight">
-          armel<span className="text-muted">.dev</span>
+          armel<span className="text-accent">.dev</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

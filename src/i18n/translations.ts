@@ -11,7 +11,6 @@ export type TranslationSchema = {
     downloadCV: string;
   };
   about: {
-    eyebrow: string;
     title: string;
     p1: string;
     p2: string;
@@ -27,7 +26,6 @@ export type TranslationSchema = {
     exploringValue: string;
   };
   stack: {
-    eyebrow: string;
     title: string;
     subtitle: string;
     main: string;
@@ -38,7 +36,6 @@ export type TranslationSchema = {
     exploringNote: string;
   };
   projects: {
-    eyebrow: string;
     title: string;
     subtitle: string;
     viewDetails: string;
@@ -57,7 +54,7 @@ export type TranslationSchema = {
   };
   statusValues: { shipped: string; deployed: string; dev: string; docs: string };
   learning: { eyebrow: string; steps: string[] };
-  contact: { eyebrow: string; title: string; subtitle: string };
+  contact: { title: string; subtitle: string };
   footer: string;
 };
 
@@ -68,42 +65,39 @@ export const translations: Record<Lang, TranslationSchema> = {
       greeting: "Salut, je suis",
       role: "Développeur logiciel en formation.",
       description:
-        "Je construis des applications web full-stack avec Python, Django et React — étudiant en développement logiciel, j'apprends en construisant de vrais projets.",
+        "Je construis des applications web full-stack avec Python, Django et React. Étudiant en troisième année de génie logiciel, j'apprends surtout en travaillant sur des projets concrets.",
       viewProjects: "Voir les projets",
-      contact: "Contact",
+      contact: "Me contacter",
       downloadCV: "Télécharger le CV",
     },
     about: {
-      eyebrow: "01 · À propos",
       title: "À propos de moi",
-      p1: "Je suis étudiant en troisième année de développement logiciel, actuellement concentré sur la construction d'applications web full-stack — principalement avec Python, Django et React. J'aime comprendre comment un produit fonctionne de bout en bout : l'API, le modèle de données, l'interface, et les décisions entre les deux.",
-      p2: "L'essentiel de ce que je sais vient de la construction de vraies choses — une plateforme e-commerce multi-portails au sein d'une équipe de neuf développeurs, une application desktop en Rust livrée à un client, une boutique en ligne en cours de conception pour une vraie cliente — plutôt que des exercices isolés. C'est aussi là que se fait la plupart de mon apprentissage : déboguer un vrai bug, c'est souvent le moment où un concept devient enfin clair.",
-      p3: "En parallèle de mon socle technique, j'explore progressivement l'architecture logicielle, l'IA, la cybersécurité, le DevSecOps et les systèmes cloud — des domaines qui m'intéressent vraiment, mais où je débute encore, et j'essaie de ne pas en exagérer le niveau.",
+      p1: "Je suis en troisième année de licence en génie logiciel et je me concentre sur le développement web full-stack, principalement avec Python, Django et React. Ce qui me plaît, c'est de comprendre un produit de bout en bout : l'API, le modèle de données, l'interface et les choix qui relient tout ça.",
+      p2: "J'ai surtout appris en construisant de vrais projets. Une plateforme e-commerce multi-portails avec une équipe de neuf développeurs, une application desktop en Rust livrée à un client, et une boutique en ligne que je conçois pour une vraie cliente. Les bugs qui m'ont fait le plus galérer sont souvent ceux qui m'ont le plus appris.",
+      p3: "À côté de ça, je m'intéresse à l'architecture logicielle, à la cybersécurité, au cloud et surtout à l'IA, que je compte approfondir en master. Et quand je ne code pas, je produis de la musique. C'est de là qu'est venue l'idée de Vellum.",
       currently: "Actuellement",
       status: "Statut",
-      statusValue: "Étudiant en développement logiciel",
+      statusValue: "Étudiant en L3 génie logiciel",
       focus: "Focus",
       focusValue: "Développement web full-stack",
       core: "Socle technique",
       coreValue: "Python · Django · React",
       exploring: "Exploration",
-      exploringValue: "Architecture · IA · Sécurité",
+      exploringValue: "IA · Architecture · Sécurité",
     },
     stack: {
-      eyebrow: "02 · Stack",
       title: "Stack technique",
-      subtitle: "Organisée selon ma confiance réelle avec chaque outil — pas un mur de logos.",
+      subtitle: "Classée selon mon niveau réel avec chaque outil.",
       main: "Stack principale",
-      mainNote: "Ce avec quoi je construis au quotidien.",
+      mainNote: "Ce que j'utilise au quotidien.",
       familiar: "Maîtrise partielle",
-      familiarNote: "À l'aise, encore en approfondissement.",
+      familiarNote: "Je m'en sers, j'approfondis encore.",
       exploring: "En exploration",
-      exploringNote: "Début de parcours — curiosité, pas encore expertise.",
+      exploringNote: "Je découvre, je pratique petit à petit.",
     },
     projects: {
-      eyebrow: "03 · Projets",
       title: "Projets",
-      subtitle: "Des projets réels, à des stades réels — certains livrés, d'autres encore en cours.",
+      subtitle: "Du projet livré à celui encore en conception, avec le statut de chacun.",
       viewDetails: "Voir les détails",
       back: "Retour aux projets",
       role: "Rôle",
@@ -122,12 +116,12 @@ export const translations: Record<Lang, TranslationSchema> = {
       shipped: "Livré",
       deployed: "Déployé",
       dev: "En développement",
-      docs: "Conception / phase MVP",
+      docs: "En conception",
     },
     learning: {
-      eyebrow: "Parcours d'apprentissage",
+      eyebrow: "Mon parcours",
       steps: [
-        "Fondamentaux de la programmation",
+        "Bases de la programmation",
         "Python",
         "Django",
         "API REST / DRF",
@@ -137,54 +131,51 @@ export const translations: Record<Lang, TranslationSchema> = {
       ],
     },
     contact: {
-      eyebrow: "04 · Contact",
-      title: "Construisons quelque chose.",
-      subtitle: "Ouvert aux stages, postes junior et collaborations. N'hésitez pas à me contacter.",
+      title: "Me contacter",
+      subtitle:
+        "Je cherche un stage ou un premier poste en développement, et je suis ouvert aux collaborations. Le plus rapide, c'est par email.",
     },
-    footer: "Construit avec React, TypeScript & Tailwind CSS.",
+    footer: "Code source du site",
   },
   en: {
     nav: { home: "Home", about: "About", projects: "Projects", stack: "Stack", contact: "Contact" },
     hero: {
       greeting: "Hi, I'm",
-      role: "Software Developer in training.",
+      role: "Software developer in training.",
       description:
-        "Building full-stack web applications with Python, Django and React — currently a software development student, learning by shipping real projects.",
-      viewProjects: "View Projects",
-      contact: "Contact",
+        "I build full-stack web applications with Python, Django and React. I'm a third-year software engineering student, and I learn mostly by working on real projects.",
+      viewProjects: "View projects",
+      contact: "Get in touch",
       downloadCV: "Download CV",
     },
     about: {
-      eyebrow: "01 · About",
-      title: "About Me",
-      p1: "I'm a third-year software development student, currently focused on building full-stack web applications — mostly with Python, Django and React. I like understanding how a product actually works end to end: the API, the data model, the interface, and the decisions in between.",
-      p2: "Most of what I know comes from building real things — a multi-portal e-commerce platform within a nine-developer team, a Rust desktop app delivered to a client, an online store being designed for a real client — rather than isolated exercises. That's also where most of my learning happens: debugging an actual bug is usually where a concept finally clicks.",
-      p3: "Alongside my core stack, I'm gradually exploring software architecture, AI, cybersecurity, DevSecOps and cloud systems — areas I find genuinely interesting, but that I'm still early in, and I try not to overstate that.",
+      title: "About me",
+      p1: "I'm a third-year software engineering student focused on full-stack web development, mainly with Python, Django and React. What I enjoy is understanding a product end to end: the API, the data model, the interface and the choices that tie them together.",
+      p2: "Most of what I know comes from building real projects. A multi-portal e-commerce platform with a team of nine developers, a Rust desktop app delivered to a client, and an online store I'm designing for a real client. The bugs that gave me the hardest time are usually the ones that taught me the most.",
+      p3: "Beyond that, I'm interested in software architecture, cybersecurity, cloud and above all AI, which I plan to study further in a master's program. When I'm not coding, I produce music. That's where the idea for Vellum came from.",
       currently: "Currently",
       status: "Status",
-      statusValue: "Software development student",
+      statusValue: "3rd-year software engineering student",
       focus: "Focus",
       focusValue: "Full-stack web development",
       core: "Core stack",
       coreValue: "Python · Django · React",
       exploring: "Exploring",
-      exploringValue: "Architecture · AI · Security",
+      exploringValue: "AI · Architecture · Security",
     },
     stack: {
-      eyebrow: "02 · Stack",
-      title: "Tech Stack",
-      subtitle: "Organized by how confident I actually am with each — not a wall of logos.",
-      main: "Main Stack",
-      mainNote: "What I build with day to day.",
-      familiar: "Familiar With",
-      familiarNote: "Comfortable using, still deepening.",
-      exploring: "Currently Exploring",
-      exploringNote: "Early stage — curiosity, not expertise yet.",
+      title: "Tech stack",
+      subtitle: "Sorted by how well I actually know each tool.",
+      main: "Main stack",
+      mainNote: "What I use day to day.",
+      familiar: "Familiar with",
+      familiarNote: "I use them, still going deeper.",
+      exploring: "Exploring",
+      exploringNote: "Learning and practicing step by step.",
     },
     projects: {
-      eyebrow: "03 · Projects",
       title: "Projects",
-      subtitle: "Real projects, at real stages — some shipped, some still in progress.",
+      subtitle: "From shipped work to projects still in design, each with its current status.",
       viewDetails: "View details",
       back: "Back to projects",
       role: "Role",
@@ -195,20 +186,20 @@ export const translations: Record<Lang, TranslationSchema> = {
       overview: "Overview",
       problem: "Problem",
       solution: "Solution",
-      features: "Key Features",
-      challenges: "Technical Challenges",
-      learned: "Lessons Learned",
+      features: "Key features",
+      challenges: "Technical challenges",
+      learned: "What I learned",
     },
     statusValues: {
       shipped: "Shipped",
       deployed: "Deployed",
       dev: "In development",
-      docs: "Design / MVP stage",
+      docs: "In design",
     },
     learning: {
-      eyebrow: "Learning path",
+      eyebrow: "My path",
       steps: [
-        "Programming fundamentals",
+        "Programming basics",
         "Python",
         "Django",
         "REST APIs / DRF",
@@ -218,10 +209,10 @@ export const translations: Record<Lang, TranslationSchema> = {
       ],
     },
     contact: {
-      eyebrow: "04 · Contact",
-      title: "Let's build something.",
-      subtitle: "Open to internships, junior roles, and collaborations. Feel free to reach out.",
+      title: "Get in touch",
+      subtitle:
+        "I'm looking for an internship or a first developer role, and I'm open to collaborations. Email is the fastest way to reach me.",
     },
-    footer: "Built with React, TypeScript & Tailwind CSS.",
+    footer: "Site source code",
   },
 };

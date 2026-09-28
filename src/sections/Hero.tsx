@@ -38,7 +38,7 @@ export function Hero() {
         >
           Laurencelle Louis Armel Akpa
         </motion.h1>
-        <motion.p variants={item} className="mt-4 text-xl font-medium text-muted sm:text-2xl">
+        <motion.p variants={item} className="mt-4 text-xl font-medium text-accent sm:text-2xl">
           {t.hero.role}
         </motion.p>
         <motion.p

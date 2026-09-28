@@ -53,7 +53,7 @@ export function ProjectDetail({ project, onBack }: { project: Project; onBack: (
           alt={project.name}
           loading="lazy"
           decoding="async"
-          className="mt-10 w-full rounded-2xl border border-border"
+          className="mt-10 w-full rounded-xl border border-border"
         />
       )}
 
@@ -68,8 +68,8 @@ export function ProjectDetail({ project, onBack }: { project: Project; onBack: (
         </div>
 
         <aside>
-          <div className="rounded-2xl border border-border bg-surface p-6 md:sticky md:top-24">
-            <p className="mb-3 text-sm font-medium text-muted">{t.projects.details}</p>
+          <div className="rounded-xl border border-border bg-surface p-6 md:sticky md:top-24">
+            <p className="mb-3 text-sm font-medium text-accent">{t.projects.details}</p>
             <dl className="space-y-3 text-sm">
               <div className="flex justify-between gap-4">
                 <dt className="text-muted">{t.projects.role}</dt>

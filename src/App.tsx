@@ -79,11 +79,21 @@ function AppContent() {
   );
 }
 
+const PORTFOLIO_REPO_URL = "https://github.com/laurencelle14/armel-portfolio";
+
 function Footer({ footerText }: { footerText: string }) {
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto max-w-content px-6 py-8 text-xs text-muted">
-        © {new Date().getFullYear()} Laurencelle Louis Armel Akpa. {footerText}
+      <div className="mx-auto flex max-w-content flex-wrap items-center justify-between gap-2 px-6 py-8 text-xs text-muted">
+        <span>© {new Date().getFullYear()} Laurencelle Louis Armel Akpa</span>
+        <a
+          href={PORTFOLIO_REPO_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="focus-ring transition-colors duration-200 hover:text-accent"
+        >
+          {footerText}
+        </a>
       </div>
     </footer>
   );
