@@ -47,43 +47,28 @@ export function ProjectDetail({ project, onBack }: { project: Project; onBack: (
         )}
       </div>
 
+      {project.image && (
+        <img
+          src={project.image}
+          alt={project.name}
+          loading="lazy"
+          decoding="async"
+          className="mt-10 w-full rounded-2xl border border-border"
+        />
+      )}
+
       <div className="mt-16 grid gap-12 md:grid-cols-3">
         <div className="space-y-10 md:col-span-2">
           <Block title={t.projects.overview} text={content.overview} />
           <Block title={t.projects.problem} text={content.problem} />
           <Block title={t.projects.solution} text={content.solution} />
-
-          <div>
-            <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted">
-              {t.projects.challenges}
-            </h2>
-            <ul className="space-y-2">
-              {content.challenges.map((c) => (
-                <li key={c} className="flex gap-3 text-text">
-                  <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-muted" />
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted">
-              {t.projects.learned}
-            </h2>
-            <ul className="space-y-2">
-              {content.learned.map((l) => (
-                <li key={l} className="flex gap-3 text-text">
-                  <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-muted" />
-                  {l}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <List title={t.projects.features} items={content.features} />
+          <List title={t.projects.challenges} items={content.challenges} />
+          <List title={t.projects.learned} items={content.learned} />
         </div>
 
         <aside>
-          <div className="rounded-2xl border border-border bg-surface p-6">
+          <div className="rounded-2xl border border-border bg-surface p-6 md:sticky md:top-24">
             <p className="mb-3 text-sm font-medium text-muted">{t.projects.details}</p>
             <dl className="space-y-3 text-sm">
               <div className="flex justify-between gap-4">
@@ -107,6 +92,23 @@ function Block({ title, text }: { title: string; text: string }) {
     <div>
       <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted">{title}</h2>
       <p className="leading-relaxed text-text">{text}</p>
+    </div>
+  );
+}
+
+function List({ title, items }: { title: string; items: string[] }) {
+  if (items.length === 0) return null;
+  return (
+    <div>
+      <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted">{title}</h2>
+      <ul className="space-y-2">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3 text-text">
+            <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-muted" />
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

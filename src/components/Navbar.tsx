@@ -5,7 +5,6 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-// Replace with your real profile URLs.
 const GITHUB_URL = "https://github.com/laurencelle14";
 const LINKEDIN_URL = "https://www.linkedin.com/in/laurencelle-akpa-522484432";
 

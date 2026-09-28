@@ -21,13 +21,13 @@ No invented jobs, years of experience, clients or certifications — content is
 based on real, described projects. Where information was missing, it's marked
 as a placeholder for you to fill in.
 
-**Before you deploy, update these placeholders:**
+**Still to add as projects go public:**
 
-- `src/components/Navbar.tsx` / `src/sections/Contact.tsx` — `GITHUB_URL`, `LINKEDIN_URL`, `EMAIL`
-- `src/data/projects.ts` — add real `github` / `demo` links per project as they become public
-- `public/cv.pdf` — add your real CV (or remove the "Download CV" / "Télécharger le CV" button in `src/sections/Hero.tsx`)
-- `public/images/profile.jpg` — already set from your upload; swap it any time
-- Project screenshots — this scaffold ships text-first cards; drop images into `public/projects/` and reference them in `projects.ts` when you have real screenshots to show
+- `src/data/projects.ts` — real `github` / `demo` links per project
+- Project screenshots — drop images into `public/projects/` and set the `image` field in `projects.ts` (shown on the project detail page)
+- `public/og-image.png` (1200×630) — then uncomment the `og:image` meta tag in `index.html`
+
+Projects are routed by URL hash (`#projet/<slug>`), so each project has a shareable link.
 
 ## Getting started
 

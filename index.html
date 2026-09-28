@@ -1,17 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laurencelle Louis Armel Akpa — Software Developer</title>
-    <meta name="description" content="Software development student building full-stack web applications with Python, Django and React." />
-    <meta property="og:title" content="Laurencelle Louis Armel Akpa — Software Developer" />
-    <meta property="og:description" content="Building modern web applications with Python, Django and React." />
+    <title>Laurencelle Louis Armel Akpa — Développeur logiciel</title>
+    <meta name="description" content="Étudiant en développement logiciel, je construis des applications web full-stack avec Python, Django et React." />
+    <meta property="og:title" content="Laurencelle Louis Armel Akpa — Développeur logiciel" />
+    <meta property="og:description" content="Applications web full-stack avec Python, Django et React." />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <!-- Add a 1200x630 preview image at public/og-image.png, then uncomment:
+    <meta property="og:image" content="https://YOUR-DOMAIN/og-image.png" />
+    -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script>
+      // Apply theme before first paint to avoid a white flash in dark mode.
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark");
+          var lang = localStorage.getItem("lang");
+          if (lang === "en") document.documentElement.lang = "en";
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

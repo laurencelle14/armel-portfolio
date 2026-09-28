@@ -1,4 +1,4 @@
-export type StatusKey = "deployed" | "dev" | "docs";
+export type StatusKey = "shipped" | "deployed" | "dev" | "docs";
 
 type Localized = {
   tagline: string;
@@ -24,24 +24,82 @@ export type Project = {
   en: Localized;
 };
 
-// Replace github / demo links with your real repo and deployment URLs.
+// Order matters: strongest / most complete projects first.
 export const projects: Project[] = [
+  {
+    slug: "budgetchantier",
+    name: "Gestionnaire Budgétaire de Projet",
+    stack: ["Tauri", "Rust", "SQLite"],
+    statusKey: "shipped",
+    fr: {
+      tagline: "Application desktop pour suivre les budgets de chantier.",
+      description:
+        "Un outil de gestion budgétaire pour projets de construction, sous forme d'application desktop Tauri/Rust, offline-first avec une base SQLite locale.",
+      role: "Développeur full-stack",
+      overview:
+        "Cet outil aide à suivre les budgets de projets sur des chantiers. C'est une application desktop Windows construite avec Tauri et Rust, offline-first, avec une base SQLite locale.",
+      problem:
+        "Un client avait besoin d'un moyen simple et fiable de suivre les budgets de projet sans dépendre de tableurs, dans un outil rapide et fonctionnant hors ligne sur desktop.",
+      solution:
+        "L'application utilise Tauri avec un backend Rust et SQLite pour un stockage local-first, garantissant un fonctionnement rapide et fiable même sans connexion internet.",
+      features: [
+        "Système d'animation modale en bulle pour consulter les détails du budget",
+        "Palette visuelle personnalisée (noir/beige/doré) affinée après avoir testé d'autres directions",
+        "Base de données locale SQLite pour un usage offline-first",
+      ],
+      challenges: [
+        "Corriger un bug de calcul du backend Rust dans la formule du reliquat budgétaire",
+        "Concevoir une architecture locale-first fiable avec Tauri et SQLite",
+      ],
+      learned: [
+        "Une expérience pratique de Rust à travers une vraie application desktop, pas seulement des tutoriels",
+        "Quand simplifier un système (comme retirer l'authentification, inutile sur un poste local) plutôt que de le sur-ingénierer",
+        "Comment itérer sur un système de design visuel plutôt que de se contenter du premier essai",
+      ],
+    },
+    en: {
+      tagline: "Desktop app for tracking construction project budgets.",
+      description:
+        "A budget management tool for construction projects, built as an offline-first Tauri/Rust desktop app with a local SQLite database.",
+      role: "Full-stack developer",
+      overview:
+        "This tool helps track project budgets on construction sites. It's a Windows desktop app built with Tauri and Rust, offline-first, with a local SQLite database.",
+      problem:
+        "A client needed a simple, reliable way to track project budgets without relying on spreadsheets, in a tool that felt fast and worked offline on desktop.",
+      solution:
+        "The app uses Tauri with a Rust backend and SQLite for local-first storage, keeping it fast and reliable even without an internet connection.",
+      features: [
+        "Bubble-expansion modal animation system for viewing budget details",
+        "Custom warm visual palette (noir/beige/doré) refined after testing other directions",
+        "Local SQLite database for fully offline-first use",
+      ],
+      challenges: [
+        "Fixing a Rust backend calculation bug in the reliquat (remaining budget) formula",
+        "Designing a reliable local-first architecture with Tauri and SQLite",
+      ],
+      learned: [
+        "Practical Rust experience through a real desktop application, not just tutorials",
+        "When to simplify a system (like dropping auth, unnecessary on a local machine) rather than over-engineer it",
+        "How to iterate on a visual design system rather than settling on the first option",
+      ],
+    },
+  },
   {
     slug: "anitche",
     name: "Anitche",
-    stack: ["Django", "Django REST Framework", "PostgreSQL", "Celery", "Redis", "Docker"],
+    stack: ["Django", "Django REST Framework", "FastAPI", "PostgreSQL", "Celery", "Redis", "Docker"],
     statusKey: "dev",
     fr: {
       tagline: "Plateforme e-commerce multi-portails construite en équipe.",
       description:
-        "Une plateforme e-commerce sous Django avec des portails séparés pour clients, vendeurs, livreurs et administrateurs, développée en monorepo avec une équipe complète.",
+        "Une plateforme e-commerce avec des portails séparés pour clients, vendeurs, livreurs et administrateurs, développée en monorepo au sein d'une équipe de neuf développeurs.",
       role: "Développeur backend & infrastructure",
       overview:
-        "Anitche est une plateforme e-commerce multi-portails desservant clients, vendeurs et livreurs via un seul système, développée en collaboration au sein d'une petite équipe de développement.",
+        "Anitche est une plateforme e-commerce multi-portails desservant clients, vendeurs et livreurs via un seul système, développée en collaboration au sein d'une équipe de neuf développeurs.",
       problem:
         "Un même système e-commerce devait servir des types d'utilisateurs très différents — acheteurs, vendeurs et livreurs — chacun avec ses propres permissions et flux, tout en restant maintenable en tant que base de code d'équipe.",
       solution:
-        "Un monorepo Django avec 12 apps dédiées, des settings séparés pour dev/prod, et une couche API REST partagée sécurisée par JWT. Les tâches de fond (notifications, traitement des commandes) passent par Celery et Redis.",
+        "Un monorepo Django avec 12 apps dédiées, des settings séparés pour dev/prod, et une couche API REST partagée sécurisée par JWT. Les tâches de fond (notifications, traitement des commandes) passent par Celery et Redis. Le backend est actuellement en refactorisation, avec une partie en Django et une partie en FastAPI, validée par une CI sur chaque branche.",
       features: [
         "Modules support et panier construits de zéro avec une couverture de tests complète",
         "Configuration des 12 apps Django avec settings séparés (base/dev/prod)",
@@ -49,7 +107,7 @@ export const projects: Project[] = [
         "Coordination des branches Git et de l'infrastructure avec l'équipe",
       ],
       challenges: [
-        "Coordonner les branches Git et éviter les conflits de fusion entre plusieurs contributeurs",
+        "Coordonner les branches Git et éviter les conflits de fusion entre neuf contributeurs",
         "Structurer un découpage des settings de monorepo (base/dev/prod) qui reste cohérent à mesure que des apps s'ajoutent",
         "Écrire une couverture de tests complète pour les modules support et panier avant fusion",
       ],
@@ -62,14 +120,14 @@ export const projects: Project[] = [
     en: {
       tagline: "Multi-portal e-commerce platform built with a team.",
       description:
-        "A Django-based e-commerce platform with separate client, vendor, courier and admin portals, built as a monorepo with a full team.",
+        "An e-commerce platform with separate client, vendor, courier and admin portals, built as a monorepo within a nine-developer team.",
       role: "Backend developer & infrastructure",
       overview:
-        "Anitche is a multi-portal e-commerce platform serving clients, vendors and couriers through one system, developed collaboratively within a small dev team.",
+        "Anitche is a multi-portal e-commerce platform serving clients, vendors and couriers through one system, developed collaboratively within a nine-developer team.",
       problem:
         "A single e-commerce system needed to serve very different user types — buyers, sellers and delivery couriers — each with their own permissions and workflows, while staying maintainable as a team codebase.",
       solution:
-        "A Django monorepo with 12 dedicated apps, split settings for dev/prod, and a shared REST API layer secured with JWT. Background tasks (notifications, order processing) run through Celery and Redis.",
+        "A Django monorepo with 12 dedicated apps, split settings for dev/prod, and a shared REST API layer secured with JWT. Background tasks (notifications, order processing) run through Celery and Redis. The backend is currently being refactored, split between Django and FastAPI, with CI running on every branch.",
       features: [
         "Built the support and panier (cart) modules from scratch with full test coverage",
         "Configured all 12 Django apps with split settings (base/dev/prod)",
@@ -77,7 +135,7 @@ export const projects: Project[] = [
         "Coordinated Git branches and infrastructure across the team",
       ],
       challenges: [
-        "Coordinating Git branches and avoiding merge conflicts across several contributors",
+        "Coordinating Git branches and avoiding merge conflicts across nine contributors",
         "Structuring a monorepo settings split (base/dev/prod) that stays consistent as apps are added",
         "Writing full test coverage for the support and cart modules before merging",
       ],
@@ -91,20 +149,20 @@ export const projects: Project[] = [
   {
     slug: "melo-caprice-boutik",
     name: "Melo Caprice Boutik",
-    // Adjust to your real stack once implementation choices are locked in.
+    // Planned stack — adjust once implementation choices are locked in.
     stack: ["Django", "Django REST Framework", "React", "PostgreSQL"],
-    statusKey: "dev",
+    statusKey: "docs",
     fr: {
-      tagline: "Boutique en ligne de perruques, mèches et soins.",
+      tagline: "Boutique en ligne de perruques, mèches et soins — en conception.",
       description:
-        "Digitalisation d'une activité familiale de vente de perruques, mèches de luxe, extensions et soins capillaires/corporels, avec catalogue, panier, compte client et paiement en ligne.",
+        "Projet de digitalisation d'une activité familiale de vente de perruques, mèches de luxe, extensions et soins capillaires/corporels : catalogue, panier, compte client et paiement en ligne.",
       role: "Développeur full-stack",
       overview:
-        "Melo Caprice Boutik est la plateforme e-commerce d'une activité déjà existante, développée pour lui donner une présence en ligne et dépasser les ventes locales et les réseaux sociaux.",
+        "Melo Caprice Boutik sera la plateforme e-commerce d'une activité déjà existante, pour lui donner une présence en ligne au-delà des ventes locales et des réseaux sociaux. Le projet est actuellement en phase de cadrage et de conception.",
       problem:
-        "L'activité manquait de structuration pour ses ventes et avait une faible portée à l'international : sans plateforme, la visibilité et la capacité à vendre au-delà du cercle local restaient limitées.",
+        "L'activité manque de structuration pour ses ventes et a une faible portée à l'international : sans plateforme, la visibilité et la capacité à vendre au-delà du cercle local restent limitées.",
       solution:
-        "Une boutique en ligne complète avec consultation libre du catalogue, panier accessible sans compte, création de compte obligatoire pour commander, recherche et filtres produits, liste de favoris, paiement en ligne, et un espace administrateur pour que la cliente gère elle-même les produits.",
+        "Une boutique en ligne complète est prévue : consultation libre du catalogue, panier accessible sans compte, compte obligatoire pour commander, recherche et filtres produits, liste de favoris, paiement en ligne, et un espace administrateur pour que la cliente gère elle-même ses produits.",
       features: [
         "Catalogue avec recherche et filtres par catégorie (perruques, mèches, extensions, soins)",
         "Panier accessible sans compte, compte obligatoire pour valider une commande",
@@ -113,7 +171,7 @@ export const projects: Project[] = [
       ],
       challenges: [
         "Concevoir un modèle de données produit flexible pour gérer des variantes (couleur, longueur, taille) et le stock",
-        "Construire une interface simple à prendre en main pour une administratrice non technique",
+        "Penser une interface simple à prendre en main pour une administratrice non technique",
       ],
       learned: [
         "Comment cadrer un cahier des charges avec une vraie cliente et ses contraintes réelles",
@@ -121,16 +179,16 @@ export const projects: Project[] = [
       ],
     },
     en: {
-      tagline: "Online store for wigs, hair extensions and care products.",
+      tagline: "Online store for wigs, hair extensions and care products — in design.",
       description:
-        "Digitizing an existing family business selling wigs, luxury hair extensions and hair/body care products, with a catalog, cart, customer accounts and online payment.",
+        "A project to digitize an existing family business selling wigs, luxury hair extensions and hair/body care products: catalog, cart, customer accounts and online payment.",
       role: "Full-stack developer",
       overview:
-        "Melo Caprice Boutik is the e-commerce platform for an already-existing business, built to give it an online presence beyond local sales and social media.",
+        "Melo Caprice Boutik will be the e-commerce platform for an already-existing business, giving it an online presence beyond local sales and social media. The project is currently in the scoping and design phase.",
       problem:
-        "The business lacked structured sales and had limited international reach — without a platform, visibility and the ability to sell beyond the local circle stayed limited.",
+        "The business lacks structured sales and has limited international reach — without a platform, visibility and the ability to sell beyond the local circle stay limited.",
       solution:
-        "A full online store with free catalog browsing, a cart usable without an account, mandatory account creation to check out, product search and filters, a favorites list, online payment, and an admin area so the client can manage products herself.",
+        "A full online store is planned: free catalog browsing, a cart usable without an account, mandatory account creation to check out, product search and filters, a favorites list, online payment, and an admin area so the client can manage products herself.",
       features: [
         "Catalog with search and filters by category (wigs, extensions, hair/body care)",
         "Cart usable without an account; account required to check out",
@@ -139,7 +197,7 @@ export const projects: Project[] = [
       ],
       challenges: [
         "Designing a flexible product data model to handle variants (color, length, size) and stock",
-        "Building an interface simple enough for a non-technical admin to use confidently",
+        "Planning an interface simple enough for a non-technical admin to use confidently",
       ],
       learned: [
         "How to scope a cahier des charges with a real client and their actual constraints",
@@ -200,64 +258,6 @@ export const projects: Project[] = [
       learned: [
         "How to scope an MVP and write a clear cahier des charges before building",
         "How multi-party payments with Stripe Connect are typically structured",
-      ],
-    },
-  },
-  {
-    slug: "budgetchantier",
-    name: "Gestionnaire Budgétaire de Projet",
-    stack: ["Tauri", "Rust", "SQLite", "Django", "PostgreSQL", "Railway"],
-    statusKey: "deployed",
-    fr: {
-      tagline: "Application desktop et web pour suivre les budgets de chantier.",
-      description:
-        "Un outil de gestion budgétaire pour projets de construction, sous forme d'application desktop Tauri/Rust, offline-first avec une base SQLite locale.",
-      role: "Développeur full-stack",
-      overview:
-        "Cet outil aide à suivre les budgets de projets sur des chantiers. C'est une application desktop Tauri/Rust, offline-first, avec une base SQLite locale.",
-      problem:
-        "Un client avait besoin d'un moyen simple et fiable de suivre les budgets de projet sans dépendre de tableurs, dans un outil rapide et fonctionnant hors ligne sur desktop.",
-      solution:
-        "L'application utilise Tauri avec un backend Rust et SQLite pour un stockage local-first, garantissant un fonctionnement rapide et fiable même hors ligne.",
-      features: [
-        "Système d'animation modale en bulle pour consulter les détails du budget",
-        "Palette visuelle personnalisée (noir/beige/doré) affinée après avoir testé d'autres directions",
-        "Base de données locale SQLite pour un usage offline-first",
-      ],
-      challenges: [
-        "Corriger un bug de calcul du backend Rust dans la formule du reliquat budgétaire",
-        "Concevoir une architecture locale-first fiable avec Tauri et SQLite",
-      ],
-      learned: [
-        "Une expérience pratique de Rust à travers une vraie application desktop, pas seulement des tutoriels",
-        "Quand simplifier un système (comme retirer l'auth) plutôt que de le sur-ingénierer",
-        "Comment itérer sur un système de design visuel plutôt que de se contenter du premier essai",
-      ],
-    },
-    en: {
-      tagline: "Desktop and web app for tracking construction project budgets.",
-      description:
-        "A budget management tool for construction projects, built as an offline-first Tauri/Rust desktop app with a local SQLite database.",
-      role: "Full-stack developer",
-      overview:
-        "This tool helps track project budgets on construction sites. It's an offline-first Tauri/Rust desktop app with a local SQLite database.",
-      problem:
-        "A client needed a simple, reliable way to track project budgets without relying on spreadsheets, in a tool that felt fast and worked offline on desktop.",
-      solution:
-        "The app uses Tauri with a Rust backend and SQLite for local-first storage, keeping it fast and reliable even without an internet connection.",
-      features: [
-        "Bubble-expansion modal animation system for viewing budget details",
-        "Custom warm visual palette (noir/beige/doré) refined after testing other directions",
-        "Local SQLite database for fully offline-first use",
-      ],
-            challenges: [
-        "Fixing a Rust backend calculation bug in the reliquat (remaining budget) formula",
-        "Designing a reliable local-first architecture with Tauri and SQLite",
-      ],
-      learned: [
-        "Practical Rust experience through a real desktop application, not just tutorials",
-        "When to simplify a system (like dropping auth) rather than over-engineer it",
-        "How to iterate on a visual design system rather than settling on the first option",
       ],
     },
   },

@@ -66,9 +66,9 @@ export function Hero() {
             <Mail size={16} />
             {t.hero.contact}
           </a>
-          {/* Add your real CV file to /public and update the href below. */}
           <a
             href="/cv.pdf"
+            download="CV-Laurencelle-Akpa.pdf"
             className="focus-ring inline-flex items-center gap-2 px-2 py-2.5 text-sm text-muted transition-colors duration-200 hover:text-text"
           >
             <Download size={16} />
@@ -85,9 +85,12 @@ export function Hero() {
       >
         <div className="relative h-40 w-40 overflow-hidden rounded-full border border-border bg-surface sm:h-52 sm:w-52 md:h-64 md:w-64">
           <img
-            src="/images/profile.jpg"
+            src="/images/Profile.webp"
             alt="Laurencelle Louis Armel Akpa"
-            className="h-full w-full object-cover"
+            width={256}
+            height={256}
+            decoding="async"
+            className="h-full w-full object-cover object-[center_20%]"
           />
         </div>
         <motion.div
